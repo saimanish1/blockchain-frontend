@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import * as axios from "axios";
 import Block from "./Block";
+import {Link} from "react-router-dom";
 
 class Blocks extends Component {
     state={
@@ -17,6 +18,8 @@ class Blocks extends Component {
         return (
             <div>
                 <h3>Blocks</h3>
+                <div><Link to={"/"}>Home</Link></div>
+
                 {
                     this.state.blocks.map(block=>  <Block key={block.hash} block={block}/>)
 

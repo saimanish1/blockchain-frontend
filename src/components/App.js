@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import axios from "axios";
-import Blocks from "./Blocks";
+import {Link} from "react-router-dom";
 
 
 class App extends Component {
@@ -22,10 +22,12 @@ class App extends Component {
         const {walletInfo:{address,balance}}=this.state;
         return (
             <div className="App">
+                <div><Link to={"/blocks"}>Blocks</Link></div>
+                <div><Link to={"/conduct-transaction"}>Conduct Transaction</Link></div>
+                <div><Link to={"/transaction-pool"}>Transaction Pool</Link></div>
                 <div>Address: {address}</div>
                 <div>Balance: {balance}</div>
                 <br/>
-                <Blocks/>
             </div>
         );
     }
